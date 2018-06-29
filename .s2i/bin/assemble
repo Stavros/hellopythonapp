@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+shopt -s dotglob
+echo "---> Installing application source ..."
+mv /tmp/src/* ./
+
+echo "---> Upgrading pip to latest version ..."
+pip install -U pip setuptools wheel
+
+echo "---> Installing dependencies ..."
+pip install -r requirements.txt
+
+# set permissions for any installed artifacts
+fix-permissions /opt/app-root
+
+echo "---> Testing the code ..."
+py.test
