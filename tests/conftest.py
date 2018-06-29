@@ -1,10 +1,10 @@
 import pytest
 import sys
 sys.path.append( '.' )
-import mypythonapp
+import myapp
 
 @pytest.fixture(scope="module")
 def client():
-    mypythonapp.app.testing = True
-    client = mypythonapp.app.test_client()
+    myapp.app.testing = True
+    client = myapp.app.test_client()
     return client
