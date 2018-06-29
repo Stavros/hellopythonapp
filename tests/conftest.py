@@ -1,7 +1,7 @@
 import pytest
 import sys
 sys.path.append( '.' )
-import myapp
+import hellopythonapp
 
 @pytest.fixture(scope="module")
 def client():
